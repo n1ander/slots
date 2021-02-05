@@ -1,10 +1,6 @@
-#define SDL_MAIN_HANDLED
-#include "../include/SDL.h"
-#include "renderer.h";
+#include <iostream>
 
 int main(){
-    int width = 640;
-    int height = 480;
-    Renderer r(width, height);
+	std::cout << "Hello World\n";
     return 0;
 }
