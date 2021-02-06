@@ -1,6 +1,8 @@
 #include <iostream>
+#include <SDL2/SDL.h>
+#include "renderer.h"
 
 int main(){
-	std::cout << "Hello World\n";
+	Renderer r(1080, 720);
     return 0;
 }
