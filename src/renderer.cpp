@@ -1,5 +1,6 @@
 #include <iostream>
 #include "renderer.h"
+#include "game.h"
 
 Renderer::Renderer(int width, int height){
 	SDL_Init(SDL_INIT_VIDEO);
@@ -15,10 +16,21 @@ Renderer::Renderer(int width, int height){
 	if(window == NULL){
 		std::cout << "Could not create window: %s\n", SDL_GetError();
 	}
-	SDL_Delay(3000);
 }
 
 Renderer::~Renderer(){
 	SDL_DestroyWindow(window);
 	SDL_Quit();
+}
+
+void Renderer::Render(){
+	running = true;
+	SDL_Event e;
+	while(running){
+		SDL_PollEvent(&e);
+		if(e.type == SDL_QUIT){
+			std::cout << "Quit Message.\n";
+			running = false;
+		}
+	}
 }

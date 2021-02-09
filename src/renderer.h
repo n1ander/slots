@@ -8,8 +8,13 @@ class Renderer{
 		Renderer(int width, int height);
 		~Renderer();
 
+		void Render();
+
 	private:
 		SDL_Window *window;
+		SDL_Renderer *renderer;
+
+		bool running;
 };
 
 #endif
