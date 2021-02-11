@@ -4,7 +4,7 @@
 #include "game.h"
 
 int main(){
-	Renderer r(1080, 720);
+	Renderer r(640, 480);
 	r.Render();
     return 0;
 }
