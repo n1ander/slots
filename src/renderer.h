@@ -15,6 +15,7 @@ class Renderer{
 		SDL_Renderer *renderer;
 
 		bool running;
+		int r = 0, g = 255, b = 0;
 };
 
 #endif

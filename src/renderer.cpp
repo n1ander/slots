@@ -39,20 +39,14 @@ void Renderer::Render(){
 				std::cout << "QUIT MESSAGE.\n";
 				running = false;
 			case SDL_KEYDOWN:
-				std::cout << "KEY DOWN PRESSED.\n";
-				SDL_SetRenderDrawColor(renderer, 255, 0, 255, SDL_ALPHA_OPAQUE);
-				SDL_RenderDrawLine(renderer, 320, 200, 300, 240);
-				SDL_RenderDrawLine(renderer, 300, 240, 340, 240);
-				SDL_RenderDrawLine(renderer, 340, 240, 320, 200);
-				//SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-				break;
-			case SDL_KEYUP:
-				std::cout << "KEY RELEASED.\n";
-				SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+				r = rand() % 255;
+				g = rand() % 255;
+				b = rand() % 255;
 				break;
 			default:
 				break;
 		}
+		SDL_SetRenderDrawColor(renderer, r, g, b, 255);
 		SDL_RenderClear(renderer);
 		SDL_RenderPresent(renderer);
 	}
