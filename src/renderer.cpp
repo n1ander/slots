@@ -3,7 +3,12 @@
 #include "game.h"
 
 Renderer::Renderer(int width, int height){
-	SDL_Init(SDL_INIT_VIDEO);
+	
+	if(SDL_Init(SDL_INIT_VIDEO) < 0){
+		std::cout << "SDL could not initialize.\n";
+		std::cout << "SDL_Error: " << SDL_GetError() << "\n";
+	}
+
 	window = SDL_CreateWindow(
 		"Slots",
 		SDL_WINDOWPOS_UNDEFINED,
