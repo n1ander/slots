@@ -35,24 +35,7 @@ Renderer::~Renderer(){
 }
 
 void Renderer::Render(){
-	running = true;
-	SDL_Event e;
-	while(running){
-		SDL_PollEvent(&e);
-		switch(e.type){
-			case SDL_QUIT:
-				std::cout << "QUIT MESSAGE.\n";
-				running = false;
-			case SDL_KEYDOWN:
-				r = rand() % 255;
-				g = rand() % 255;
-				b = rand() % 255;
-				break;
-			default:
-				break;
-		}
-		SDL_SetRenderDrawColor(renderer, r, g, b, 255);
-		SDL_RenderClear(renderer);
-		SDL_RenderPresent(renderer);
-	}
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderClear(renderer);
+	SDL_RenderPresent(renderer);
 }
